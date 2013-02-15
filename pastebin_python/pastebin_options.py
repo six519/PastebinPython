@@ -1,0 +1,5 @@
+OPTION_PASTE = "paste"
+OPTION_LIST = "list"
+OPTION_TRENDS = "trends"
+OPTION_DELETE = "delete"
+OPTION_USER_DETAILS = "userdetails"
