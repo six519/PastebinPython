@@ -1,3 +1,8 @@
+"""A complete pastebin.com API wrapper for Python
+
+.. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
+
+"""
 from pastebin import PastebinPython
 
 __version__ = "1.0"

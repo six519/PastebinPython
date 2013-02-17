@@ -1,3 +1,10 @@
+"""
+.. module:: pastebin
+   :synopsis: This module contains the main class to be instantiated to use pastebin.com functionality
+
+.. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
+
+"""
 import re, urllib2, urllib
 from xml.dom.minidom import parseString
 
@@ -10,8 +17,26 @@ from pastebin_exceptions import PastebinBadRequestException, PastebinNoPastesExc
 PastebinFileException
 
 class PastebinPython(object):
+	"""This is the main class to be instantiated to use pastebin.com functionality
+
+	"""
 
 	def __init__(self, **kwargs):
+		"""You need to put your **API Key** when instantiating this class 
+		
+		:param kwargs: keyword arguments to set settings that can be use to call pastebin.com API function
+		:type kwargs: dict
+		:returns: class -- PastebinPython
+
+		===========
+		Example:
+		===========
+
+		>>> pasteBin = PastebinPython(api_dev_key='123456789')
+		>>> print pasteBin.api_dev_key
+		123456789
+
+		"""
 
 		self.api_dev_key = kwargs.get('api_dev_key','')
 		self.__api_user_key = ""
@@ -19,14 +44,43 @@ class PastebinPython(object):
 
 	@property
 	def api_user_key(self):
+		"""This is where the api_user_key is stored after calling :func:`getUserKey`
+
+		:returns: str -- the api_user_key
+
+		"""
 		return self.__api_user_key
 
 	@property
 	def api_user_paste_list(self):
+		"""This where the list of pastes of the current user is stored after calling :func:`listUserPastes`
+
+		:returns: list -- current user pastes list
+
+		"""
 		return self.__api_user_paste_list
 
 	def createPaste(self, api_paste_code, api_paste_name='', api_paste_format='', api_paste_private='', api_paste_expire_date=''):
+		"""This will create a new paste
 
+		:param api_paste_code: this is the text that will be written inside your paste
+		:type api_paste_code: str
+		:param api_paste_name: this will be the name / title of your paste
+		:type api_paste_name: str
+		:param api_paste_format: this will be the syntax highlighting value, values to be assign can be found at :mod:`pastebin_python.pastebin_formats`
+		:type api_paste_format: str
+		:param api_paste_private: this makes a paste public or private, values to be assign can be found at :mod:`pastebin_python.pastebin_constants`
+		:type api_paste_private: int
+		:param api_paste_expire_date: this sets the expiration date of your paste, values to be assign can be found at :mod:`pastebin_python.pastebin_constants`
+		:type api_paste_expire_date: str
+		:returns: str -- pastebin.com paste URL
+		:raises: PastebinBadRequestException
+
+		.. note::
+
+			*api_paste_code* is the only required parameter
+
+		"""
 		api_user_key = self.api_user_key if self.api_user_key else ""
 
 		postData = {
@@ -43,6 +97,26 @@ class PastebinPython(object):
 		return self.__processPost(PASTEBIN_API_POST_URL, postData)
 
 	def createPasteFromFile(self, filename, api_paste_name='', api_paste_format='', api_paste_private='', api_paste_expire_date=''):
+		"""Almost the same as :func:`createPaste` ,the only difference is that the value of *api_paste_code* came from the file you opened 
+		
+		:param filename: the full path of the file
+		:type filename: str
+		:param api_paste_name: this will be the name / title of your paste
+		:type api_paste_name: str
+		:param api_paste_format: this will be the syntax highlighting value, values to be assign can be found at :mod:`pastebin_python.pastebin_formats`
+		:type api_paste_format: str
+		:param api_paste_private: this makes a paste public or private, values to be assign can be found at :mod:`pastebin_python.pastebin_constants`
+		:type api_paste_private: int
+		:param api_paste_expire_date: this sets the expiration date of your paste, values to be assign can be found at :mod:`pastebin_python.pastebin_constants`
+		:type api_paste_expire_date: str
+		:returns: str -- pastebin.com paste URL
+		:raises: PastebinFileException
+
+		.. note::
+
+			*filename* is the only required field
+
+		"""
 
 		try:
 			fileToOpen = open(filename, 'r')
@@ -55,6 +129,16 @@ class PastebinPython(object):
 
 
 	def __processPost(self, url, data):
+		"""A private function that is responsible of calling/executing the pastebin.com functionality
+
+		:param url: the url of the pastebin.com **API**
+		:type url: str
+		:param data: the data to be POSTed to the pastebin.com **API**
+		:type data: dic
+		:returns: str -- the successfull output of the pastebin.com **API** if no exception raised
+		:raises: PastebinBadRequestException, PastebinNoPastesException
+
+		"""
 
 		request = urllib2.urlopen(url, urllib.urlencode(data))
 		response = str(request.read())
