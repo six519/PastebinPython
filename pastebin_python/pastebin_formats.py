@@ -1,3 +1,10 @@
+"""
+.. module:: pastebin_formats
+	:sypnosis: This module contains constants that can be used in :func:`pastebin_python.pastebin.PastebinPython.createPaste` or :func:`pastebin_python.pastebin.PastebinPython.createPasteFromFile` in *api_paste_format* parameter
+
+.. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
+
+"""
 FORMAT_4CS = "4cs"
 FORMAT_6502_ACME_CROSS_ASSEMBLER = "6502acme"
 FORMAT_6502_KICK_ASSEMBLER = "6502kickass"

@@ -1,3 +1,10 @@
+"""
+.. module:: pastebin_constants
+	:sypnosis: This module contains the constants that can be used in the :func:`pastebin_python.pastebin.PastebinPython.__processPost` , :func:`pastebin_python.pastebin.PastebinPython.createPaste` and :func:`pastebin_python.pastebin.PastebinPython.createPasteFromFile`
+
+.. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
+
+"""
 PASTEBIN_API_URL = "http://pastebin.com/api/"
 PASTEBIN_API_POST_URL = "%s%s" % (PASTEBIN_API_URL, "api_post.php")
 PASTEBIN_API_LOGIN_URL = "%s%s" % (PASTEBIN_API_URL, "api_login.php")

@@ -5,16 +5,13 @@
 .. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
 
 """
-import re, urllib2, urllib
+import re
+import urllib2
+import urllib
 from xml.dom.minidom import parseString
-
-from pastebin_options import OPTION_PASTE, OPTION_LIST, \
-OPTION_TRENDS, OPTION_DELETE, \
-OPTION_USER_DETAILS
-
+from pastebin_options import OPTION_PASTE, OPTION_LIST, OPTION_TRENDS, OPTION_DELETE, OPTION_USER_DETAILS
 from pastebin_constants import PASTEBIN_API_POST_URL, PASTEBIN_API_LOGIN_URL
-from pastebin_exceptions import PastebinBadRequestException, PastebinNoPastesException, \
-PastebinFileException
+from pastebin_exceptions import PastebinBadRequestException, PastebinNoPastesException, PastebinFileException
 
 class PastebinPython(object):
 	"""This is the main class to be instantiated to use pastebin.com functionality
@@ -44,7 +41,7 @@ class PastebinPython(object):
 
 	@property
 	def api_user_key(self):
-		"""This is where the api_user_key is stored after calling :func:`getUserKey`
+		"""This is where the api_user_key is stored after calling :func:`creatAPIUserKey`
 
 		:returns: str -- the api_user_key
 
@@ -151,7 +148,21 @@ class PastebinPython(object):
 
 		return response
 
-	def getUserKey(self, api_user_name, api_user_password):
+	def creatAPIUserKey(self, api_user_name, api_user_password):
+		"""This is used to request an *api_user_key* which can be used to create a paste as a logged in user
+
+		:param api_user_name: this is the pastebin.com username
+		:type api_user_name: str
+		:param api_user_password: this is the pastebin.com password
+		:type api_user_password: str
+		:returns: str -- unique user session key
+		:raises: PastebinBadRequestException
+
+		.. note::
+
+			If successfull the unique user session key will be assigned to the private variable *__api_user_key* and can be get with the property *api_user_key*
+
+		"""
 
 		postData = {
 			'api_dev_key':self.api_dev_key,
@@ -164,6 +175,19 @@ class PastebinPython(object):
 		return self.__api_user_key
 
 	def listUserPastes(self, api_results_limit=50):
+		"""This will list pastes created by a user
+
+		:param api_results_limit: this is not required but the min value should be 1 and the max value should be 1000
+		:type api_results_limit: int
+		:returns: list -- the list of of pastes in a dictionary type
+		:raises: PastebinBadRequestException, PastebinNoPastesException
+
+		.. note::
+
+			Need to call the :func:`creatAPIUserKey` first before calling this function
+			Pastes list will be stored to the private variable *__api_user_paste_list* and can be retrieve by the property *api_user_key*
+
+		"""
 
 		postData = {
 			'api_dev_key':self.api_dev_key,
@@ -178,6 +202,12 @@ class PastebinPython(object):
 		return self.__api_user_paste_list 
 
 	def listTrendingPastes(self):
+		"""This will list the 18 currently trending pastes
+
+		:returns: list -- the 18 currently trending pastes in a dictionary format
+		:raises: PastebinBadRequestException
+
+		"""
 
 		postData = {
 			'api_dev_key':self.api_dev_key,
@@ -190,6 +220,13 @@ class PastebinPython(object):
 		return trendsList
 
 	def __parseUser(self, xmlString):
+		"""This will parse the xml string returned by the function :func:`getUserInfos`
+
+		:param xmlString: this is the returned xml string from :func:`getUserInfos`
+		:type xmlString: str
+		:returns: list -- user info in a dictionary format
+
+		"""
 		retList = []
 		userElements = xmlString.getElementsByTagName('user')
 
@@ -208,6 +245,13 @@ class PastebinPython(object):
 		return retList
 
 	def __parsePaste(self, xmlString):
+		"""This will parse the xml string returned by the the function :func:`listUserPastes` or :func:`listTrendingPastes`
+
+		:param xmlString: this is the returned xml string from :func:`listUserPastes` or :func:`listTrendingPastes`
+		:type xmlString: str
+		:returns: list -- pastes info in a dictionary format
+
+		"""
 		retList = []
 		pasteElements = xmlString.getElementsByTagName('paste')
 
@@ -235,6 +279,15 @@ class PastebinPython(object):
 
 
 	def __parseXML(self, xml, isPaste=True):
+		"""This will handle all of the xml string parsing
+
+		:param xml: xml string
+		:type xml: str
+		:param isPaste: if True then it will parse the pastes info else it will parse the user info
+		:type isPaste: bool
+		:returns: list -- info in a dictionary format
+
+		"""
 		retList = []
 		xmlString = parseString("<pasteBin>%s</pasteBin>" % xml)
 		
@@ -247,6 +300,17 @@ class PastebinPython(object):
 
 
 	def deletePaste(self, api_paste_key):
+		"""This will delete pastes created by certain users
+
+		:param api_paste_key: this is the paste key that which you can get in the :func:`listUserPastes` function
+		:type api_paste_key: str
+		:returns: bool -- True if the deletion is successfull else False
+
+		.. note::
+
+			Before calling this function, you need to call the :func:`creatAPIUserKey` first then call the :func:`listUserPastes`
+
+		"""
 		postData = {
 			'api_dev_key':self.api_dev_key,
 			'api_user_key':self.api_user_key,
@@ -266,6 +330,16 @@ class PastebinPython(object):
 
 
 	def getUserInfos(self):
+		"""You can obtain a users personal info and certain settings by calling this function
+
+		:returns: list -- user info in a dictionary format
+		:raises: PastebinBadRequestException
+
+		.. note::
+
+			You need to call the :func:`creatAPIUserKey` before calling this function
+
+		"""
 		
 		postData = {
 			'api_dev_key':self.api_dev_key,
