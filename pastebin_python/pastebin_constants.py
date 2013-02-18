@@ -1,6 +1,6 @@
 """
 .. module:: pastebin_constants
-	:sypnosis: This module contains the constants that can be used in the :func:`pastebin_python.pastebin.PastebinPython.__processPost` , :func:`pastebin_python.pastebin.PastebinPython.createPaste` and :func:`pastebin_python.pastebin.PastebinPython.createPasteFromFile`
+	:synopsis: This module contains the constants that can be used in the :func:`pastebin_python.pastebin.PastebinPython.__processPost` , :func:`pastebin_python.pastebin.PastebinPython.createPaste` and :func:`pastebin_python.pastebin.PastebinPython.createPasteFromFile`
 
 .. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
 

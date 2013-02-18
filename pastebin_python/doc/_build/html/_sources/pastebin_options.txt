@@ -1,0 +1,6 @@
+pastebin_options.py
+===================
+
+.. automodule:: pastebin_options
+	:undoc-members:
+

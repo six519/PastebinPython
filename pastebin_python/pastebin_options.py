@@ -1,6 +1,6 @@
 """
 .. module:: pastebin_options
-	:sypnosis: This module contains constants that can be used in *api_option*
+	:synopsis: This module contains constants that can be used in *api_option*
 
 .. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
 

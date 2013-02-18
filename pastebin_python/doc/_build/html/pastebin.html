@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pastebin.py &mdash; pastebin_python 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pastebin_python 1.0 documentation" href="index.html" />
+    <link rel="next" title="pastebin_constants.py" href="pastebin_constants.html" />
+    <link rel="prev" title="Welcome to pastebin_python’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pastebin_constants.html" title="pastebin_constants.py"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to pastebin_python’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">pastebin_python 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="pastebin-py">
+<h1>pastebin.py<a class="headerlink" href="#pastebin-py" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="pastebin.PastebinPython">
+<em class="property">class </em><tt class="descclassname">pastebin.</tt><tt class="descname">PastebinPython</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#pastebin.PastebinPython" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the main class to be instantiated to use pastebin.com functionality</p>
+<dl class="attribute">
+<dt id="pastebin.PastebinPython.api_user_key">
+<tt class="descname">api_user_key</tt><a class="headerlink" href="#pastebin.PastebinPython.api_user_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is where the api_user_key is stored after calling <tt class="xref py py-func docutils literal"><span class="pre">createAPIUserKey()</span></tt></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">str &#8211; the api_user_key</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pastebin.PastebinPython.api_user_paste_list">
+<tt class="descname">api_user_paste_list</tt><a class="headerlink" href="#pastebin.PastebinPython.api_user_paste_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>This where the list of pastes of the current user is stored after calling <tt class="xref py py-func docutils literal"><span class="pre">listUserPastes()</span></tt></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list &#8211; current user pastes list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin.PastebinPython.createAPIUserKey">
+<tt class="descname">createAPIUserKey</tt><big>(</big><em>api_user_name</em>, <em>api_user_password</em><big>)</big><a class="headerlink" href="#pastebin.PastebinPython.createAPIUserKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is used to request an <em>api_user_key</em> which can be used to create a paste as a logged in user</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>api_user_name</strong> (<em>str</em>) &#8211; this is the pastebin.com username</li>
+<li><strong>api_user_password</strong> (<em>str</em>) &#8211; this is the pastebin.com password</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str &#8211; unique user session key</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">PastebinBadRequestException</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If successfull the unique user session key will be assigned to the private variable <em>__api_user_key</em> and can be get with the property <em>api_user_key</em></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin.PastebinPython.createPaste">
+<tt class="descname">createPaste</tt><big>(</big><em>api_paste_code</em>, <em>api_paste_name=''</em>, <em>api_paste_format=''</em>, <em>api_paste_private=''</em>, <em>api_paste_expire_date=''</em><big>)</big><a class="headerlink" href="#pastebin.PastebinPython.createPaste" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will create a new paste</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>api_paste_code</strong> (<em>str</em>) &#8211; this is the text that will be written inside your paste</li>
+<li><strong>api_paste_name</strong> (<em>str</em>) &#8211; this will be the name / title of your paste</li>
+<li><strong>api_paste_format</strong> (<em>str</em>) &#8211; this will be the syntax highlighting value, values to be assign can be found at <tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_formats</span></tt></li>
+<li><strong>api_paste_private</strong> (<em>int</em>) &#8211; this makes a paste public or private, values to be assign can be found at <tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_constants</span></tt></li>
+<li><strong>api_paste_expire_date</strong> (<em>str</em>) &#8211; this sets the expiration date of your paste, values to be assign can be found at <tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_constants</span></tt></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str &#8211; pastebin.com paste URL</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">PastebinBadRequestException</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>api_paste_code</em> is the only required parameter</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin.PastebinPython.createPasteFromFile">
+<tt class="descname">createPasteFromFile</tt><big>(</big><em>filename</em>, <em>api_paste_name=''</em>, <em>api_paste_format=''</em>, <em>api_paste_private=''</em>, <em>api_paste_expire_date=''</em><big>)</big><a class="headerlink" href="#pastebin.PastebinPython.createPasteFromFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Almost the same as <tt class="xref py py-func docutils literal"><span class="pre">createPaste()</span></tt> ,the only difference is that the value of <em>api_paste_code</em> came from the file you opened</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> (<em>str</em>) &#8211; the full path of the file</li>
+<li><strong>api_paste_name</strong> (<em>str</em>) &#8211; this will be the name / title of your paste</li>
+<li><strong>api_paste_format</strong> (<em>str</em>) &#8211; this will be the syntax highlighting value, values to be assign can be found at <tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_formats</span></tt></li>
+<li><strong>api_paste_private</strong> (<em>int</em>) &#8211; this makes a paste public or private, values to be assign can be found at <tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_constants</span></tt></li>
+<li><strong>api_paste_expire_date</strong> (<em>str</em>) &#8211; this sets the expiration date of your paste, values to be assign can be found at <tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_constants</span></tt></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str &#8211; pastebin.com paste URL</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last">PastebinFileException</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>filename</em> is the only required field</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin.PastebinPython.deletePaste">
+<tt class="descname">deletePaste</tt><big>(</big><em>api_paste_key</em><big>)</big><a class="headerlink" href="#pastebin.PastebinPython.deletePaste" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will delete pastes created by certain users</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>api_paste_key</strong> (<em>str</em>) &#8211; this is the paste key that which you can get in the <tt class="xref py py-func docutils literal"><span class="pre">listUserPastes()</span></tt> function</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bool &#8211; True if the deletion is successfull else False</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Before calling this function, you need to call the <tt class="xref py py-func docutils literal"><span class="pre">createAPIUserKey()</span></tt> first then call the <tt class="xref py py-func docutils literal"><span class="pre">listUserPastes()</span></tt></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin.PastebinPython.getUserInfos">
+<tt class="descname">getUserInfos</tt><big>(</big><big>)</big><a class="headerlink" href="#pastebin.PastebinPython.getUserInfos" title="Permalink to this definition">¶</a></dt>
+<dd><p>You can obtain a users personal info and certain settings by calling this function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list &#8211; user info in a dictionary format</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body">PastebinBadRequestException</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You need to call the <tt class="xref py py-func docutils literal"><span class="pre">createAPIUserKey()</span></tt> before calling this function</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin.PastebinPython.listTrendingPastes">
+<tt class="descname">listTrendingPastes</tt><big>(</big><big>)</big><a class="headerlink" href="#pastebin.PastebinPython.listTrendingPastes" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will list the 18 currently trending pastes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list &#8211; the 18 currently trending pastes in a dictionary format</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body">PastebinBadRequestException</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin.PastebinPython.listUserPastes">
+<tt class="descname">listUserPastes</tt><big>(</big><em>api_results_limit=50</em><big>)</big><a class="headerlink" href="#pastebin.PastebinPython.listUserPastes" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will list pastes created by a user</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>api_results_limit</strong> (<em>int</em>) &#8211; this is not required but the min value should be 1 and the max value should be 1000</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list &#8211; the list of of pastes in a dictionary type</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body">PastebinBadRequestException, PastebinNoPastesException</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Need to call the <tt class="xref py py-func docutils literal"><span class="pre">createAPIUserKey()</span></tt> first before calling this function
+Pastes list will be stored to the private variable <em>__api_user_paste_list</em> and can be retrieve by the property <em>api_user_key</em></p>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to pastebin_python&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pastebin_constants.html"
+                        title="next chapter">pastebin_constants.py</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/pastebin.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pastebin_constants.html" title="pastebin_constants.py"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to pastebin_python’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">pastebin_python 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Ferdinand Silva.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

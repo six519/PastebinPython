@@ -1,6 +1,6 @@
 """
 .. module:: pastebin_exceptions
-	:sypnosis: This module contains all of the exceptions
+	:synopsis: This module contains all of the exceptions
 
 .. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
 
