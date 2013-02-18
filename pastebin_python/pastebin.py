@@ -41,7 +41,7 @@ class PastebinPython(object):
 
 	@property
 	def api_user_key(self):
-		"""This is where the api_user_key is stored after calling :func:`creatAPIUserKey`
+		"""This is where the api_user_key is stored after calling :func:`createAPIUserKey`
 
 		:returns: str -- the api_user_key
 
@@ -148,7 +148,7 @@ class PastebinPython(object):
 
 		return response
 
-	def creatAPIUserKey(self, api_user_name, api_user_password):
+	def createAPIUserKey(self, api_user_name, api_user_password):
 		"""This is used to request an *api_user_key* which can be used to create a paste as a logged in user
 
 		:param api_user_name: this is the pastebin.com username
@@ -184,7 +184,7 @@ class PastebinPython(object):
 
 		.. note::
 
-			Need to call the :func:`creatAPIUserKey` first before calling this function
+			Need to call the :func:`createAPIUserKey` first before calling this function
 			Pastes list will be stored to the private variable *__api_user_paste_list* and can be retrieve by the property *api_user_key*
 
 		"""
@@ -308,7 +308,7 @@ class PastebinPython(object):
 
 		.. note::
 
-			Before calling this function, you need to call the :func:`creatAPIUserKey` first then call the :func:`listUserPastes`
+			Before calling this function, you need to call the :func:`createAPIUserKey` first then call the :func:`listUserPastes`
 
 		"""
 		postData = {
@@ -337,7 +337,7 @@ class PastebinPython(object):
 
 		.. note::
 
-			You need to call the :func:`creatAPIUserKey` before calling this function
+			You need to call the :func:`createAPIUserKey` before calling this function
 
 		"""
 		
