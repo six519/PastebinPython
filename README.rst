@@ -1,11 +1,12 @@
 PastebinPython
-**************
+==============
 
 A complete http://pastebin.com API wrapper for Python
 
 Sample Usage
 ============
 ::
+
 	"""
 	Creating paste from file...
 
