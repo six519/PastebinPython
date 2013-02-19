@@ -5,7 +5,7 @@
 """
 from pastebin import PastebinPython
 
-__version__ = "1.0"
+__version__ = "1.1"
 __app_name__ = "pastebin_python"
 __description__ = "A complete pastebin.com API wrapper for Python"
 __author__ = "Ferdinand Silva"

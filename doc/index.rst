@@ -4,21 +4,17 @@
    contain the root `toctree` directive.
 
 Welcome to pastebin_python's documentation!
-===========================================
+*******************************************
 
 .. toctree::
-   :titlesonly:
+	:maxdepth: 1
 
-   pastebin
-   pastebin_constants
-   pastebin_exceptions
-   pastebin_formats
-   pastebin_options
+	intro
+	code
 
 Indices and tables
-==================
+******************
 
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-

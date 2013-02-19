@@ -1,0 +1,1637 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Code Documentation &mdash; pastebin_python 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pastebin_python 1.0 documentation" href="index.html" />
+    <link rel="prev" title="PastebinPython" href="intro.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="PastebinPython"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">pastebin_python 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-pastebin_python">
+<span id="code-documentation"></span><h1>Code Documentation<a class="headerlink" href="#module-pastebin_python" title="Permalink to this headline">¶</a></h1>
+<p>A complete pastebin.com API wrapper for Python</p>
+<div class="section" id="module-pastebin_python.pastebin">
+<span id="pastebin"></span><h2>pastebin<a class="headerlink" href="#module-pastebin_python.pastebin" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-pastebin"></span><dl class="class">
+<dt id="pastebin_python.pastebin.PastebinPython">
+<em class="property">class </em><tt class="descclassname">pastebin_python.pastebin.</tt><tt class="descname">PastebinPython</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the main class to be instantiated to use pastebin.com functionality</p>
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>**kwargs</em><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>You need to put your <strong>API Key</strong> when instantiating this class</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>kwargs</strong> (<em>dict</em>) &#8211; keyword arguments to set settings that can be use to call pastebin.com API function</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">class &#8211; <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython" title="pastebin_python.pastebin.PastebinPython"><tt class="xref py py-class docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pasteBin</span> <span class="o">=</span> <span class="n">PastebinPython</span><span class="p">(</span><span class="n">api_dev_key</span><span class="o">=</span><span class="s">&#39;123456789&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">pasteBin</span><span class="o">.</span><span class="n">api_dev_key</span>
+<span class="go">123456789</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pastebin_python.pastebin.PastebinPython.api_user_key">
+<tt class="descname">api_user_key</tt><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython.api_user_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is where the api_user_key is stored after calling <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.createAPIUserKey" title="pastebin_python.pastebin.PastebinPython.createAPIUserKey"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.createAPIUserKey()</span></tt></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">str &#8211; the api_user_key</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pastebin_python.pastebin.PastebinPython.api_user_paste_list">
+<tt class="descname">api_user_paste_list</tt><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython.api_user_paste_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>This where the list of pastes of the current user is stored after calling <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.listUserPastes" title="pastebin_python.pastebin.PastebinPython.listUserPastes"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.listUserPastes()</span></tt></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list &#8211; current user pastes list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython.createPaste">
+<tt class="descname">createPaste</tt><big>(</big><em>api_paste_code</em>, <em>api_paste_name=''</em>, <em>api_paste_format=''</em>, <em>api_paste_private=''</em>, <em>api_paste_expire_date=''</em><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython.createPaste" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will create a new paste</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>api_paste_code</strong> (<em>str</em>) &#8211; this is the text that will be written inside your paste</li>
+<li><strong>api_paste_name</strong> (<em>str</em>) &#8211; this will be the name / title of your paste</li>
+<li><strong>api_paste_format</strong> (<em>str</em>) &#8211; this will be the syntax highlighting value, values to be assign can be found at <a class="reference internal" href="#module-pastebin_python.pastebin_formats" title="pastebin_python.pastebin_formats"><tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_formats</span></tt></a></li>
+<li><strong>api_paste_private</strong> (<em>int</em>) &#8211; this makes a paste public or private, values to be assign can be found at <a class="reference internal" href="#module-pastebin_python.pastebin_constants" title="pastebin_python.pastebin_constants"><tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_constants</span></tt></a></li>
+<li><strong>api_paste_expire_date</strong> (<em>str</em>) &#8211; this sets the expiration date of your paste, values to be assign can be found at <a class="reference internal" href="#module-pastebin_python.pastebin_constants" title="pastebin_python.pastebin_constants"><tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_constants</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str &#8211; pastebin.com paste URL</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last"><a class="reference internal" href="#pastebin_python.pastebin_exceptions.PastebinBadRequestException" title="pastebin_python.pastebin_exceptions.PastebinBadRequestException"><tt class="xref py py-exc docutils literal"><span class="pre">pastebin_python.pastebin_exceptions.PastebinBadRequestException</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>api_paste_code</em> is the only required parameter</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython.createPasteFromFile">
+<tt class="descname">createPasteFromFile</tt><big>(</big><em>filename</em>, <em>api_paste_name=''</em>, <em>api_paste_format=''</em>, <em>api_paste_private=''</em>, <em>api_paste_expire_date=''</em><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython.createPasteFromFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Almost the same as <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.createPaste" title="pastebin_python.pastebin.PastebinPython.createPaste"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.createPaste()</span></tt></a> ,the only difference is that the value of <em>api_paste_code</em> came from the file you opened</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> (<em>str</em>) &#8211; the full path of the file</li>
+<li><strong>api_paste_name</strong> (<em>str</em>) &#8211; this will be the name / title of your paste</li>
+<li><strong>api_paste_format</strong> (<em>str</em>) &#8211; this will be the syntax highlighting value, values to be assign can be found at <a class="reference internal" href="#module-pastebin_python.pastebin_formats" title="pastebin_python.pastebin_formats"><tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_formats</span></tt></a></li>
+<li><strong>api_paste_private</strong> (<em>int</em>) &#8211; this makes a paste public or private, values to be assign can be found at <a class="reference internal" href="#module-pastebin_python.pastebin_constants" title="pastebin_python.pastebin_constants"><tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_constants</span></tt></a></li>
+<li><strong>api_paste_expire_date</strong> (<em>str</em>) &#8211; this sets the expiration date of your paste, values to be assign can be found at <a class="reference internal" href="#module-pastebin_python.pastebin_constants" title="pastebin_python.pastebin_constants"><tt class="xref py py-mod docutils literal"><span class="pre">pastebin_python.pastebin_constants</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str &#8211; pastebin.com paste URL</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last"><a class="reference internal" href="#pastebin_python.pastebin_exceptions.PastebinFileException" title="pastebin_python.pastebin_exceptions.PastebinFileException"><tt class="xref py py-exc docutils literal"><span class="pre">pastebin_python.pastebin_exceptions.PastebinFileException</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><em>filename</em> is the only required field</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython.createAPIUserKey">
+<tt class="descname">createAPIUserKey</tt><big>(</big><em>api_user_name</em>, <em>api_user_password</em><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython.createAPIUserKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is used to request an <em>api_user_key</em> which can be used to create a paste as a logged in user</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>api_user_name</strong> (<em>str</em>) &#8211; this is the pastebin.com username</li>
+<li><strong>api_user_password</strong> (<em>str</em>) &#8211; this is the pastebin.com password</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str &#8211; unique user session key</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last"><a class="reference internal" href="#pastebin_python.pastebin_exceptions.PastebinBadRequestException" title="pastebin_python.pastebin_exceptions.PastebinBadRequestException"><tt class="xref py py-exc docutils literal"><span class="pre">pastebin_python.pastebin_exceptions.PastebinBadRequestException</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If successfull the unique user session key will be assigned to the private variable <em>__api_user_key</em> and can be get with the property <em>api_user_key</em></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython.listUserPastes">
+<tt class="descname">listUserPastes</tt><big>(</big><em>api_results_limit=50</em><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython.listUserPastes" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will list pastes created by a user</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>api_results_limit</strong> (<em>int</em>) &#8211; this is not required but the min value should be 1 and the max value should be 1000</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list &#8211; the list of of pastes in a dictionary type</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><a class="reference internal" href="#pastebin_python.pastebin_exceptions.PastebinBadRequestException" title="pastebin_python.pastebin_exceptions.PastebinBadRequestException"><tt class="xref py py-exc docutils literal"><span class="pre">pastebin_python.pastebin_exceptions.PastebinBadRequestException</span></tt></a>, <a class="reference internal" href="#pastebin_python.pastebin_exceptions.PastebinNoPastesException" title="pastebin_python.pastebin_exceptions.PastebinNoPastesException"><tt class="xref py py-exc docutils literal"><span class="pre">pastebin_python.pastebin_exceptions.PastebinNoPastesException</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Need to call the <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.createAPIUserKey" title="pastebin_python.pastebin.PastebinPython.createAPIUserKey"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.createAPIUserKey()</span></tt></a> first before calling this function
+Pastes list will be stored to the private variable <em>__api_user_paste_list</em> and can be retrieve by the property <em>api_user_key</em></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython.listTrendingPastes">
+<tt class="descname">listTrendingPastes</tt><big>(</big><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython.listTrendingPastes" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will list the 18 currently trending pastes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list &#8211; the 18 currently trending pastes in a dictionary format</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><a class="reference internal" href="#pastebin_python.pastebin_exceptions.PastebinBadRequestException" title="pastebin_python.pastebin_exceptions.PastebinBadRequestException"><tt class="xref py py-exc docutils literal"><span class="pre">pastebin_python.pastebin_exceptions.PastebinBadRequestException</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython.deletePaste">
+<tt class="descname">deletePaste</tt><big>(</big><em>api_paste_key</em><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython.deletePaste" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will delete pastes created by certain users</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>api_paste_key</strong> (<em>str</em>) &#8211; this is the paste key that which you can get in the <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.listUserPastes" title="pastebin_python.pastebin.PastebinPython.listUserPastes"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.listUserPastes()</span></tt></a> function</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">bool &#8211; True if the deletion is successfull else False</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Before calling this function, you need to call the <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.createAPIUserKey" title="pastebin_python.pastebin.PastebinPython.createAPIUserKey"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.createAPIUserKey()</span></tt></a> first then call the <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.listUserPastes" title="pastebin_python.pastebin.PastebinPython.listUserPastes"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.listUserPastes()</span></tt></a></p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython.getUserInfos">
+<tt class="descname">getUserInfos</tt><big>(</big><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython.getUserInfos" title="Permalink to this definition">¶</a></dt>
+<dd><p>You can obtain a users personal info and certain settings by calling this function</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list &#8211; user info in a dictionary format</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises :</th><td class="field-body"><a class="reference internal" href="#pastebin_python.pastebin_exceptions.PastebinBadRequestException" title="pastebin_python.pastebin_exceptions.PastebinBadRequestException"><tt class="xref py py-exc docutils literal"><span class="pre">pastebin_python.pastebin_exceptions.PastebinBadRequestException</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You need to call the <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.createAPIUserKey" title="pastebin_python.pastebin.PastebinPython.createAPIUserKey"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.createAPIUserKey()</span></tt></a> before calling this function</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython._PastebinPython__parsePaste">
+<tt class="descname">_PastebinPython__parsePaste</tt><big>(</big><em>xmlString</em><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython._PastebinPython__parsePaste" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will parse the xml string returned by the the function <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.listUserPastes" title="pastebin_python.pastebin.PastebinPython.listUserPastes"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.listUserPastes()</span></tt></a> or <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.listTrendingPastes" title="pastebin_python.pastebin.PastebinPython.listTrendingPastes"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.listTrendingPastes()</span></tt></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xmlString</strong> (<em>str</em>) &#8211; this is the returned xml string from <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.listUserPastes" title="pastebin_python.pastebin.PastebinPython.listUserPastes"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.listUserPastes()</span></tt></a> or <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.listTrendingPastes" title="pastebin_python.pastebin.PastebinPython.listTrendingPastes"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.listTrendingPastes()</span></tt></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list &#8211; pastes info in a dictionary format</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython._PastebinPython__parseUser">
+<tt class="descname">_PastebinPython__parseUser</tt><big>(</big><em>xmlString</em><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython._PastebinPython__parseUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will parse the xml string returned by the function <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.getUserInfos" title="pastebin_python.pastebin.PastebinPython.getUserInfos"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.getUserInfos()</span></tt></a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>xmlString</strong> (<em>str</em>) &#8211; this is the returned xml string from <a class="reference internal" href="#pastebin_python.pastebin.PastebinPython.getUserInfos" title="pastebin_python.pastebin.PastebinPython.getUserInfos"><tt class="xref py py-meth docutils literal"><span class="pre">pastebin_python.pastebin.PastebinPython.getUserInfos()</span></tt></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list &#8211; user info in a dictionary format</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython._PastebinPython__parseXML">
+<tt class="descname">_PastebinPython__parseXML</tt><big>(</big><em>xml</em>, <em>isPaste=True</em><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython._PastebinPython__parseXML" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will handle all of the xml string parsing</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>xml</strong> (<em>str</em>) &#8211; xml string</li>
+<li><strong>isPaste</strong> (<em>bool</em>) &#8211; if True then it will parse the pastes info else it will parse the user info</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list &#8211; info in a dictionary format</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="pastebin_python.pastebin.PastebinPython._PastebinPython__processPost">
+<tt class="descname">_PastebinPython__processPost</tt><big>(</big><em>url</em>, <em>data</em><big>)</big><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython._PastebinPython__processPost" title="Permalink to this definition">¶</a></dt>
+<dd><p>A private function that is responsible of calling/executing the pastebin.com functionality</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>url</strong> (<em>str</em>) &#8211; the url of the pastebin.com <strong>API</strong></li>
+<li><strong>data</strong> (<em>dict</em>) &#8211; the data to be POSTed to the pastebin.com <strong>API</strong></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">str &#8211; the successfull output of the pastebin.com <strong>API</strong> if no exception raised</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises :</th><td class="field-body"><p class="first last"><a class="reference internal" href="#pastebin_python.pastebin_exceptions.PastebinBadRequestException" title="pastebin_python.pastebin_exceptions.PastebinBadRequestException"><tt class="xref py py-exc docutils literal"><span class="pre">pastebin_python.pastebin_exceptions.PastebinBadRequestException</span></tt></a>, <a class="reference internal" href="#pastebin_python.pastebin_exceptions.PastebinNoPastesException" title="pastebin_python.pastebin_exceptions.PastebinNoPastesException"><tt class="xref py py-exc docutils literal"><span class="pre">pastebin_python.pastebin_exceptions.PastebinNoPastesException</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pastebin_python.pastebin.PastebinPython.__weakref__">
+<tt class="descname">__weakref__</tt><a class="headerlink" href="#pastebin_python.pastebin.PastebinPython.__weakref__" title="Permalink to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pastebin_python.pastebin_exceptions">
+<span id="pastebin-exceptions"></span><h2>pastebin_exceptions<a class="headerlink" href="#module-pastebin_python.pastebin_exceptions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-pastebin_exceptions"></span><dl class="exception">
+<dt id="pastebin_python.pastebin_exceptions.PastebinBadRequestException">
+<em class="property">exception </em><tt class="descclassname">pastebin_python.pastebin_exceptions.</tt><tt class="descname">PastebinBadRequestException</tt><a class="headerlink" href="#pastebin_python.pastebin_exceptions.PastebinBadRequestException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="exception">
+<dt id="pastebin_python.pastebin_exceptions.PastebinNoPastesException">
+<em class="property">exception </em><tt class="descclassname">pastebin_python.pastebin_exceptions.</tt><tt class="descname">PastebinNoPastesException</tt><a class="headerlink" href="#pastebin_python.pastebin_exceptions.PastebinNoPastesException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="exception">
+<dt id="pastebin_python.pastebin_exceptions.PastebinFileException">
+<em class="property">exception </em><tt class="descclassname">pastebin_python.pastebin_exceptions.</tt><tt class="descname">PastebinFileException</tt><a class="headerlink" href="#pastebin_python.pastebin_exceptions.PastebinFileException" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pastebin_python.pastebin_constants">
+<span id="pastebin-constants"></span><h2>pastebin_constants<a class="headerlink" href="#module-pastebin_python.pastebin_constants" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-pastebin_constants"></span><dl class="data">
+<dt id="pastebin_python.pastebin_constants.PASTEBIN_API_URL">
+<tt class="descclassname">pastebin_python.pastebin_constants.</tt><tt class="descname">PASTEBIN_API_URL</tt><em class="property"> = 'http://pastebin.com/api/'</em><a class="headerlink" href="#pastebin_python.pastebin_constants.PASTEBIN_API_URL" title="Permalink to this definition">¶</a></dt>
+<dd><p>The pastebin.com API base URL</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_constants.PASTEBIN_API_POST_URL">
+<tt class="descclassname">pastebin_python.pastebin_constants.</tt><tt class="descname">PASTEBIN_API_POST_URL</tt><em class="property"> = 'http://pastebin.com/api/api_post.php'</em><a class="headerlink" href="#pastebin_python.pastebin_constants.PASTEBIN_API_POST_URL" title="Permalink to this definition">¶</a></dt>
+<dd><p>The pastebin.com API POST URL</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_constants.PASTEBIN_API_LOGIN_URL">
+<tt class="descclassname">pastebin_python.pastebin_constants.</tt><tt class="descname">PASTEBIN_API_LOGIN_URL</tt><em class="property"> = 'http://pastebin.com/api/api_login.php'</em><a class="headerlink" href="#pastebin_python.pastebin_constants.PASTEBIN_API_LOGIN_URL" title="Permalink to this definition">¶</a></dt>
+<dd><p>The pastebin.com API login URL</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_constants.PASTE_PUBLIC">
+<tt class="descclassname">pastebin_python.pastebin_constants.</tt><tt class="descname">PASTE_PUBLIC</tt><em class="property"> = 0</em><a class="headerlink" href="#pastebin_python.pastebin_constants.PASTE_PUBLIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_constants.PASTE_UNLISTED">
+<tt class="descclassname">pastebin_python.pastebin_constants.</tt><tt class="descname">PASTE_UNLISTED</tt><em class="property"> = 1</em><a class="headerlink" href="#pastebin_python.pastebin_constants.PASTE_UNLISTED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_constants.PASTE_PRIVATE">
+<tt class="descclassname">pastebin_python.pastebin_constants.</tt><tt class="descname">PASTE_PRIVATE</tt><em class="property"> = 2</em><a class="headerlink" href="#pastebin_python.pastebin_constants.PASTE_PRIVATE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_constants.EXPIRE_NEVER">
+<tt class="descclassname">pastebin_python.pastebin_constants.</tt><tt class="descname">EXPIRE_NEVER</tt><em class="property"> = 'N'</em><a class="headerlink" href="#pastebin_python.pastebin_constants.EXPIRE_NEVER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_constants.EXPIRE_10_MIN">
+<tt class="descclassname">pastebin_python.pastebin_constants.</tt><tt class="descname">EXPIRE_10_MIN</tt><em class="property"> = '10M'</em><a class="headerlink" href="#pastebin_python.pastebin_constants.EXPIRE_10_MIN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_constants.EXPIRE_1_HOUR">
+<tt class="descclassname">pastebin_python.pastebin_constants.</tt><tt class="descname">EXPIRE_1_HOUR</tt><em class="property"> = '1H'</em><a class="headerlink" href="#pastebin_python.pastebin_constants.EXPIRE_1_HOUR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_constants.EXPIRE_1_DAY">
+<tt class="descclassname">pastebin_python.pastebin_constants.</tt><tt class="descname">EXPIRE_1_DAY</tt><em class="property"> = '1D'</em><a class="headerlink" href="#pastebin_python.pastebin_constants.EXPIRE_1_DAY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_constants.EXPIRE_1_MONTH">
+<tt class="descclassname">pastebin_python.pastebin_constants.</tt><tt class="descname">EXPIRE_1_MONTH</tt><em class="property"> = '1M'</em><a class="headerlink" href="#pastebin_python.pastebin_constants.EXPIRE_1_MONTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pastebin_python.pastebin_formats">
+<span id="pastebin-formats"></span><h2>pastebin_formats<a class="headerlink" href="#module-pastebin_python.pastebin_formats" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-pastebin_formats"></span><dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_4CS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_4CS</tt><em class="property"> = '4cs'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_4CS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_6502_ACME_CROSS_ASSEMBLER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_6502_ACME_CROSS_ASSEMBLER</tt><em class="property"> = '6502acme'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_6502_ACME_CROSS_ASSEMBLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_6502_KICK_ASSEMBLER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_6502_KICK_ASSEMBLER</tt><em class="property"> = '6502kickass'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_6502_KICK_ASSEMBLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_6502_TASM_64TASS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_6502_TASM_64TASS</tt><em class="property"> = '6502tasm'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_6502_TASM_64TASS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ABAP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ABAP</tt><em class="property"> = 'abap'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ABAP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ACTIONSCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ACTIONSCRIPT</tt><em class="property"> = 'actionscript'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ACTIONSCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ACTIONSCRIPT_3">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ACTIONSCRIPT_3</tt><em class="property"> = 'actionscript3'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ACTIONSCRIPT_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ADA">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ADA</tt><em class="property"> = 'ada'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ADA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ALGOL_68">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ALGOL_68</tt><em class="property"> = 'algol68'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ALGOL_68" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_APACHE_LOG">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_APACHE_LOG</tt><em class="property"> = 'apache'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_APACHE_LOG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_APPLESCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_APPLESCRIPT</tt><em class="property"> = 'applescript'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_APPLESCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_APT_SOURCES">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_APT_SOURCES</tt><em class="property"> = 'apt_sources'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_APT_SOURCES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ARM">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ARM</tt><em class="property"> = 'arm'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ARM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ASM_NASM">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ASM_NASM</tt><em class="property"> = 'asm'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ASM_NASM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ASP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ASP</tt><em class="property"> = 'asp'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ASP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ASYMPTOTE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ASYMPTOTE</tt><em class="property"> = 'asymptote'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ASYMPTOTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_AUTOCONF">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_AUTOCONF</tt><em class="property"> = 'autoconf'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_AUTOCONF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_AUTOHOTKEY">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_AUTOHOTKEY</tt><em class="property"> = 'autohotkey'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_AUTOHOTKEY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_AUTOIT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_AUTOIT</tt><em class="property"> = 'autoit'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_AUTOIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_AVISYNTH">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_AVISYNTH</tt><em class="property"> = 'avisynth'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_AVISYNTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_AWK">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_AWK</tt><em class="property"> = 'awk'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_AWK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_BASCOM_AVR">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_BASCOM_AVR</tt><em class="property"> = 'bascomavr'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_BASCOM_AVR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_BASH">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_BASH</tt><em class="property"> = 'bash'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_BASH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_BASIC4GL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_BASIC4GL</tt><em class="property"> = 'basic4gl'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_BASIC4GL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_BIBTEX">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_BIBTEX</tt><em class="property"> = 'bibtex'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_BIBTEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_BLITZ_BASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_BLITZ_BASIC</tt><em class="property"> = 'blitzbasic'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_BLITZ_BASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_BNF">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_BNF</tt><em class="property"> = 'bnf'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_BNF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_BOO">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_BOO</tt><em class="property"> = 'boo'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_BOO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_BRAINFUCK">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_BRAINFUCK</tt><em class="property"> = 'bf'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_BRAINFUCK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_C">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_C</tt><em class="property"> = 'c'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_C" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_C_FOR_MACS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_C_FOR_MACS</tt><em class="property"> = 'c_mac'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_C_FOR_MACS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_C_INTERMEDIATE_LANGUAGE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_C_INTERMEDIATE_LANGUAGE</tt><em class="property"> = 'cil'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_C_INTERMEDIATE_LANGUAGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_C_SHARP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_C_SHARP</tt><em class="property"> = 'csharp'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_C_SHARP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CPP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CPP</tt><em class="property"> = 'cpp'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CPP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CPP_WITH_QT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CPP_WITH_QT</tt><em class="property"> = 'cpp-qt'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CPP_WITH_QT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_C_LOADRUNNER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_C_LOADRUNNER</tt><em class="property"> = 'c_loadrunner'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_C_LOADRUNNER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CAD_DCL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CAD_DCL</tt><em class="property"> = 'caddcl'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CAD_DCL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CAD_LISP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CAD_LISP</tt><em class="property"> = 'cadlisp'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CAD_LISP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CFDG">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CFDG</tt><em class="property"> = 'cfdg'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CFDG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CHAISCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CHAISCRIPT</tt><em class="property"> = 'chaiscript'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CHAISCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CLOJURE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CLOJURE</tt><em class="property"> = 'clojure'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CLOJURE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CLONE_C">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CLONE_C</tt><em class="property"> = 'klonec'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CLONE_C" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CLONE_CPP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CLONE_CPP</tt><em class="property"> = 'klonecpp'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CLONE_CPP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CMAKE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CMAKE</tt><em class="property"> = 'cmake'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CMAKE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_COBOL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_COBOL</tt><em class="property"> = 'cobol'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_COBOL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_COFFEESCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_COFFEESCRIPT</tt><em class="property"> = 'coffeescript'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_COFFEESCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_COLDFUSION">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_COLDFUSION</tt><em class="property"> = 'cfm'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_COLDFUSION" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CSS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CSS</tt><em class="property"> = 'css'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CSS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_CUESHEET">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_CUESHEET</tt><em class="property"> = 'cuesheet'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_CUESHEET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_D">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_D</tt><em class="property"> = 'd'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_DCL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_DCL</tt><em class="property"> = 'dcl'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_DCL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_DCPU_16">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_DCPU_16</tt><em class="property"> = 'dcpu16'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_DCPU_16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_DCS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_DCS</tt><em class="property"> = 'dcs'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_DCS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_DELPHI">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_DELPHI</tt><em class="property"> = 'delphi'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_DELPHI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_DELPHI_PRISM_OXYGENE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_DELPHI_PRISM_OXYGENE</tt><em class="property"> = 'oxygene'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_DELPHI_PRISM_OXYGENE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_DIFF">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_DIFF</tt><em class="property"> = 'diff'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_DIFF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_DIV">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_DIV</tt><em class="property"> = 'div'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_DIV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_DOS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_DOS</tt><em class="property"> = 'dos'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_DOS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_DOT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_DOT</tt><em class="property"> = 'dot'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_DOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_E">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_E</tt><em class="property"> = 'e'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_E" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ECMASCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ECMASCRIPT</tt><em class="property"> = 'ecmascript'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ECMASCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_EIFFEL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_EIFFEL</tt><em class="property"> = 'eiffel'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_EIFFEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_EMAIL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_EMAIL</tt><em class="property"> = 'email'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_EMAIL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_EPC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_EPC</tt><em class="property"> = 'epc'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_EPC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ERLANG">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ERLANG</tt><em class="property"> = 'erlang'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ERLANG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_F_SHARP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_F_SHARP</tt><em class="property"> = 'fsharp'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_F_SHARP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_FALCON">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_FALCON</tt><em class="property"> = 'falcon'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_FALCON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_FO_LANGUAGE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_FO_LANGUAGE</tt><em class="property"> = 'fo'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_FO_LANGUAGE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_FORMULA_ONE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_FORMULA_ONE</tt><em class="property"> = 'f1'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_FORMULA_ONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_FORTRAN">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_FORTRAN</tt><em class="property"> = 'fortran'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_FORTRAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_FREEBASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_FREEBASIC</tt><em class="property"> = 'freebasic'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_FREEBASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_FREESWITCH">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_FREESWITCH</tt><em class="property"> = 'freeswitch'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_FREESWITCH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_GAMBAS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_GAMBAS</tt><em class="property"> = 'gambas'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_GAMBAS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_GAME_MAKER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_GAME_MAKER</tt><em class="property"> = 'gml'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_GAME_MAKER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_GDB">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_GDB</tt><em class="property"> = 'gdb'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_GDB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_GENERO">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_GENERO</tt><em class="property"> = 'genero'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_GENERO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_GENIE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_GENIE</tt><em class="property"> = 'genie'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_GENIE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_GETTEXT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_GETTEXT</tt><em class="property"> = 'gettext'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_GETTEXT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_GO">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_GO</tt><em class="property"> = 'go'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_GO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_GROOVY">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_GROOVY</tt><em class="property"> = 'groovy'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_GROOVY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_GWBASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_GWBASIC</tt><em class="property"> = 'gwbasic'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_GWBASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_HASKELL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_HASKELL</tt><em class="property"> = 'haskell'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_HASKELL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_HAXE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_HAXE</tt><em class="property"> = 'haxe'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_HAXE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_HICEST">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_HICEST</tt><em class="property"> = 'hicest'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_HICEST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_HQ9_PLUS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_HQ9_PLUS</tt><em class="property"> = 'hq9plus'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_HQ9_PLUS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_HTML">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_HTML</tt><em class="property"> = 'html4strict'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_HTML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_HTML_5">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_HTML_5</tt><em class="property"> = 'html5'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_HTML_5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ICON">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ICON</tt><em class="property"> = 'icon'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ICON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_IDL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_IDL</tt><em class="property"> = 'idl'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_IDL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_INI_FILE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_INI_FILE</tt><em class="property"> = 'ini'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_INI_FILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_INNO_SCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_INNO_SCRIPT</tt><em class="property"> = 'inno'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_INNO_SCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_INTERCAL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_INTERCAL</tt><em class="property"> = 'intercal'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_INTERCAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_IO">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_IO</tt><em class="property"> = 'io'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_IO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_J">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_J</tt><em class="property"> = 'j'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_J" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_JAVA">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_JAVA</tt><em class="property"> = 'java'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_JAVA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_JAVA_5">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_JAVA_5</tt><em class="property"> = 'java5'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_JAVA_5" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_JAVASCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_JAVASCRIPT</tt><em class="property"> = 'javascript'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_JAVASCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_JQUERY">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_JQUERY</tt><em class="property"> = 'jquery'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_JQUERY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_KIXTART">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_KIXTART</tt><em class="property"> = 'kixtart'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_KIXTART" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LATEX">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LATEX</tt><em class="property"> = 'latex'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LATEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LDIF">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LDIF</tt><em class="property"> = 'ldif'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LDIF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LIBERTY_BASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LIBERTY_BASIC</tt><em class="property"> = 'lb'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LIBERTY_BASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LINDEN_SCRIPTING">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LINDEN_SCRIPTING</tt><em class="property"> = 'lsl2'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LINDEN_SCRIPTING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LISP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LISP</tt><em class="property"> = 'lisp'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LISP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LLVM">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LLVM</tt><em class="property"> = 'llvm'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LLVM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LOCO_BASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LOCO_BASIC</tt><em class="property"> = 'locobasic'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LOCO_BASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LOGTALK">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LOGTALK</tt><em class="property"> = 'logtalk'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LOGTALK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LOL_CODE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LOL_CODE</tt><em class="property"> = 'lolcode'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LOL_CODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LOTUS_FORMULAS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LOTUS_FORMULAS</tt><em class="property"> = 'lotusformulas'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LOTUS_FORMULAS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LOTUS_SCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LOTUS_SCRIPT</tt><em class="property"> = 'lotusscript'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LOTUS_SCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LSCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LSCRIPT</tt><em class="property"> = 'lscript'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LSCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_LUA">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_LUA</tt><em class="property"> = 'lua'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_LUA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_M68000_ASSEMBLER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_M68000_ASSEMBLER</tt><em class="property"> = 'm68k'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_M68000_ASSEMBLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MAGIKSF">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MAGIKSF</tt><em class="property"> = 'magiksf'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MAGIKSF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MAKE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MAKE</tt><em class="property"> = 'make'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MAKE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MAPBASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MAPBASIC</tt><em class="property"> = 'mapbasic'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MAPBASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MATLAB">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MATLAB</tt><em class="property"> = 'matlab'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MATLAB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MIRC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MIRC</tt><em class="property"> = 'mirc'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MIRC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MIX_ASSEMBLER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MIX_ASSEMBLER</tt><em class="property"> = 'mmix'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MIX_ASSEMBLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MODULA_2">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MODULA_2</tt><em class="property"> = 'modula2'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MODULA_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MODULA_3">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MODULA_3</tt><em class="property"> = 'modula3'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MODULA_3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MOTOROLA_68000_HISOFT_DEV">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MOTOROLA_68000_HISOFT_DEV</tt><em class="property"> = '68000devpac'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MOTOROLA_68000_HISOFT_DEV" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MPASM">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MPASM</tt><em class="property"> = 'mpasm'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MPASM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MXML">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MXML</tt><em class="property"> = 'mxml'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MXML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_MYSQL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_MYSQL</tt><em class="property"> = 'mysql'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_MYSQL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_NAGIOS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_NAGIOS</tt><em class="property"> = 'nagios'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_NAGIOS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_NEWLISP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_NEWLISP</tt><em class="property"> = 'newlisp'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_NEWLISP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_NONE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_NONE</tt><em class="property"> = 'text'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_NONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_NULLSOFT_INSTALLER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_NULLSOFT_INSTALLER</tt><em class="property"> = 'nsis'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_NULLSOFT_INSTALLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_OBERON_2">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_OBERON_2</tt><em class="property"> = 'oberon2'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_OBERON_2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_OBJECK_PROGRAMMING_LANGUA">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_OBJECK_PROGRAMMING_LANGUA</tt><em class="property"> = 'objeck'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_OBJECK_PROGRAMMING_LANGUA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_OBJECTIVE_C">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_OBJECTIVE_C</tt><em class="property"> = 'objc'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_OBJECTIVE_C" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_OCALM_BRIEF">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_OCALM_BRIEF</tt><em class="property"> = 'ocaml-brief'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_OCALM_BRIEF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_OCAML">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_OCAML</tt><em class="property"> = 'ocaml'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_OCAML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_OCTAVE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_OCTAVE</tt><em class="property"> = 'octave'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_OCTAVE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_OPENBSD_PACKET_FILTER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_OPENBSD_PACKET_FILTER</tt><em class="property"> = 'pf'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_OPENBSD_PACKET_FILTER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_OPENGL_SHADING">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_OPENGL_SHADING</tt><em class="property"> = 'glsl'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_OPENGL_SHADING" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_OPENOFFICE_BASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_OPENOFFICE_BASIC</tt><em class="property"> = 'oobas'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_OPENOFFICE_BASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ORACLE_11">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ORACLE_11</tt><em class="property"> = 'oracle11'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ORACLE_11" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ORACLE_8">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ORACLE_8</tt><em class="property"> = 'oracle8'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ORACLE_8" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_OZ">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_OZ</tt><em class="property"> = 'oz'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_OZ" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PARASAIL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PARASAIL</tt><em class="property"> = 'parasail'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PARASAIL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PARI_GP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PARI_GP</tt><em class="property"> = 'parigp'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PARI_GP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PASCAL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PASCAL</tt><em class="property"> = 'pascal'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PASCAL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PAWN">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PAWN</tt><em class="property"> = 'pawn'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PAWN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PCRE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PCRE</tt><em class="property"> = 'pcre'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PCRE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PER</tt><em class="property"> = 'per'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PERL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PERL</tt><em class="property"> = 'perl'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PERL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PERL_6">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PERL_6</tt><em class="property"> = 'perl6'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PERL_6" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PHP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PHP</tt><em class="property"> = 'php'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PHP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PHP_BRIEF">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PHP_BRIEF</tt><em class="property"> = 'php-brief'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PHP_BRIEF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PIC_16">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PIC_16</tt><em class="property"> = 'pic16'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PIC_16" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PIKE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PIKE</tt><em class="property"> = 'pike'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PIKE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PIXEL_BENDER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PIXEL_BENDER</tt><em class="property"> = 'pixelbender'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PIXEL_BENDER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PL_SQL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PL_SQL</tt><em class="property"> = 'plsql'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PL_SQL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_POSTGRESQL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_POSTGRESQL</tt><em class="property"> = 'postgresql'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_POSTGRESQL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_POV_RAY">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_POV_RAY</tt><em class="property"> = 'povray'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_POV_RAY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_POWER_SHELL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_POWER_SHELL</tt><em class="property"> = 'powershell'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_POWER_SHELL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_POWERBUILDER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_POWERBUILDER</tt><em class="property"> = 'powerbuilder'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_POWERBUILDER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PROFTPD">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PROFTPD</tt><em class="property"> = 'proftpd'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PROFTPD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PROGRESS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PROGRESS</tt><em class="property"> = 'progress'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PROGRESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PROLOG">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PROLOG</tt><em class="property"> = 'prolog'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PROLOG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PROPERTIES">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PROPERTIES</tt><em class="property"> = 'properties'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PROPERTIES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PROVIDEX">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PROVIDEX</tt><em class="property"> = 'providex'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PROVIDEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PUREBASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PUREBASIC</tt><em class="property"> = 'purebasic'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PUREBASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PYCON">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PYCON</tt><em class="property"> = 'pycon'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PYCON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PYTHON">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PYTHON</tt><em class="property"> = 'python'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PYTHON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_PYTHON_FOR_S60">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_PYTHON_FOR_S60</tt><em class="property"> = 'pys60'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_PYTHON_FOR_S60" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_Q_KDB_PLUS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_Q_KDB_PLUS</tt><em class="property"> = 'q'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_Q_KDB_PLUS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_QBASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_QBASIC</tt><em class="property"> = 'qbasic'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_QBASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_R">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_R</tt><em class="property"> = 'rsplus'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_R" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_RAILS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_RAILS</tt><em class="property"> = 'rails'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_RAILS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_REBOL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_REBOL</tt><em class="property"> = 'rebol'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_REBOL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_REG">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_REG</tt><em class="property"> = 'reg'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_REG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_REXX">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_REXX</tt><em class="property"> = 'rexx'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_REXX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ROBOTS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ROBOTS</tt><em class="property"> = 'robots'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ROBOTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_RPM_SPEC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_RPM_SPEC</tt><em class="property"> = 'rpmspec'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_RPM_SPEC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_RUBY">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_RUBY</tt><em class="property"> = 'ruby'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_RUBY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_RUBY_GNUPLOT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_RUBY_GNUPLOT</tt><em class="property"> = 'gnuplot'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_RUBY_GNUPLOT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_SAS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_SAS</tt><em class="property"> = 'sas'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_SAS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_SCALA">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_SCALA</tt><em class="property"> = 'scala'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_SCALA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_SCHEME">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_SCHEME</tt><em class="property"> = 'scheme'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_SCHEME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_SCILAB">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_SCILAB</tt><em class="property"> = 'scilab'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_SCILAB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_SDLBASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_SDLBASIC</tt><em class="property"> = 'sdlbasic'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_SDLBASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_SMALLTALK">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_SMALLTALK</tt><em class="property"> = 'smalltalk'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_SMALLTALK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_SMARTY">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_SMARTY</tt><em class="property"> = 'smarty'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_SMARTY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_SPARK">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_SPARK</tt><em class="property"> = 'spark'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_SPARK" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_SPARQL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_SPARQL</tt><em class="property"> = 'sparql'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_SPARQL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_SQL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_SQL</tt><em class="property"> = 'sql'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_SQL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_STONESCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_STONESCRIPT</tt><em class="property"> = 'stonescript'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_STONESCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_SYSTEMVERILOG">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_SYSTEMVERILOG</tt><em class="property"> = 'systemverilog'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_SYSTEMVERILOG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_T_SQL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_T_SQL</tt><em class="property"> = 'tsql'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_T_SQL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_TCL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_TCL</tt><em class="property"> = 'tcl'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_TCL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_TERA_TERM">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_TERA_TERM</tt><em class="property"> = 'teraterm'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_TERA_TERM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_THINBASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_THINBASIC</tt><em class="property"> = 'thinbasic'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_THINBASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_TYPOSCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_TYPOSCRIPT</tt><em class="property"> = 'typoscript'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_TYPOSCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_UNICON">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_UNICON</tt><em class="property"> = 'unicon'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_UNICON" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_UNREALSCRIPT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_UNREALSCRIPT</tt><em class="property"> = 'uscript'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_UNREALSCRIPT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_UPC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_UPC</tt><em class="property"> = 'ups'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_UPC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_URBI">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_URBI</tt><em class="property"> = 'urbi'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_URBI" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_VALA">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_VALA</tt><em class="property"> = 'vala'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_VALA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_VB_NET">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_VB_NET</tt><em class="property"> = 'vbnet'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_VB_NET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_VEDIT">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_VEDIT</tt><em class="property"> = 'vedit'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_VEDIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_VERILOG">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_VERILOG</tt><em class="property"> = 'verilog'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_VERILOG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_VHDL">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_VHDL</tt><em class="property"> = 'vhdl'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_VHDL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_VIM">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_VIM</tt><em class="property"> = 'vim'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_VIM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_VISUAL_PRO_LOG">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_VISUAL_PRO_LOG</tt><em class="property"> = 'visualprolog'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_VISUAL_PRO_LOG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_VISUALBASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_VISUALBASIC</tt><em class="property"> = 'vb'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_VISUALBASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_VISUALFOXPRO">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_VISUALFOXPRO</tt><em class="property"> = 'visualfoxpro'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_VISUALFOXPRO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_WHITESPACE">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_WHITESPACE</tt><em class="property"> = 'whitespace'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_WHITESPACE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_WHOIS">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_WHOIS</tt><em class="property"> = 'whois'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_WHOIS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_WINBATCH">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_WINBATCH</tt><em class="property"> = 'winbatch'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_WINBATCH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_XBASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_XBASIC</tt><em class="property"> = 'xbasic'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_XBASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_XML">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_XML</tt><em class="property"> = 'xml'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_XML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_XORG_CONFIG">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_XORG_CONFIG</tt><em class="property"> = 'xorg_conf'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_XORG_CONFIG" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_XPP">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_XPP</tt><em class="property"> = 'xpp'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_XPP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_YAML">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_YAML</tt><em class="property"> = 'yaml'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_YAML" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_Z80_ASSEMBLER">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_Z80_ASSEMBLER</tt><em class="property"> = 'z80'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_Z80_ASSEMBLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_formats.FORMAT_ZXBASIC">
+<tt class="descclassname">pastebin_python.pastebin_formats.</tt><tt class="descname">FORMAT_ZXBASIC</tt><em class="property"> = 'zxbasic'</em><a class="headerlink" href="#pastebin_python.pastebin_formats.FORMAT_ZXBASIC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pastebin_python.pastebin_options">
+<span id="pastebin-options"></span><h2>pastebin_options<a class="headerlink" href="#module-pastebin_python.pastebin_options" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-pastebin_options"></span><dl class="data">
+<dt id="pastebin_python.pastebin_options.OPTION_PASTE">
+<tt class="descclassname">pastebin_python.pastebin_options.</tt><tt class="descname">OPTION_PASTE</tt><em class="property"> = 'paste'</em><a class="headerlink" href="#pastebin_python.pastebin_options.OPTION_PASTE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_options.OPTION_LIST">
+<tt class="descclassname">pastebin_python.pastebin_options.</tt><tt class="descname">OPTION_LIST</tt><em class="property"> = 'list'</em><a class="headerlink" href="#pastebin_python.pastebin_options.OPTION_LIST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_options.OPTION_TRENDS">
+<tt class="descclassname">pastebin_python.pastebin_options.</tt><tt class="descname">OPTION_TRENDS</tt><em class="property"> = 'trends'</em><a class="headerlink" href="#pastebin_python.pastebin_options.OPTION_TRENDS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_options.OPTION_DELETE">
+<tt class="descclassname">pastebin_python.pastebin_options.</tt><tt class="descname">OPTION_DELETE</tt><em class="property"> = 'delete'</em><a class="headerlink" href="#pastebin_python.pastebin_options.OPTION_DELETE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="pastebin_python.pastebin_options.OPTION_USER_DETAILS">
+<tt class="descclassname">pastebin_python.pastebin_options.</tt><tt class="descname">OPTION_USER_DETAILS</tt><em class="property"> = 'userdetails'</em><a class="headerlink" href="#pastebin_python.pastebin_options.OPTION_USER_DETAILS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Code Documentation</a><ul>
+<li><a class="reference internal" href="#module-pastebin_python.pastebin">pastebin</a></li>
+<li><a class="reference internal" href="#module-pastebin_python.pastebin_exceptions">pastebin_exceptions</a></li>
+<li><a class="reference internal" href="#module-pastebin_python.pastebin_constants">pastebin_constants</a></li>
+<li><a class="reference internal" href="#module-pastebin_python.pastebin_formats">pastebin_formats</a></li>
+<li><a class="reference internal" href="#module-pastebin_python.pastebin_options">pastebin_options</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="intro.html"
+                        title="previous chapter">PastebinPython</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/code.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="intro.html" title="PastebinPython"
+             >previous</a> |</li>
+        <li><a href="index.html">pastebin_python 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Ferdinand Silva.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

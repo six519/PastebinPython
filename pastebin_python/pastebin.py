@@ -1,5 +1,5 @@
 """
-.. module:: pastebin_python.pastebin
+.. module:: pastebin
    :synopsis: This module contains the main class to be instantiated to use pastebin.com functionality
 
 .. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
@@ -25,13 +25,11 @@ class PastebinPython(object):
 		:type kwargs: dict
 		:returns: class -- :class:`pastebin_python.pastebin.PastebinPython`
 
-		===========
-		Example:
-		===========
+		**Example:**::
 
-		>>> pasteBin = PastebinPython(api_dev_key='123456789')
-		>>> print pasteBin.api_dev_key
-		123456789
+			>>> pasteBin = PastebinPython(api_dev_key='123456789')
+			>>> print pasteBin.api_dev_key
+			123456789
 
 		"""
 
@@ -41,7 +39,7 @@ class PastebinPython(object):
 
 	@property
 	def api_user_key(self):
-		"""This is where the api_user_key is stored after calling :meth:`pastebin_python.pastebin.createAPIUserKey`
+		"""This is where the api_user_key is stored after calling :meth:`pastebin_python.pastebin.PastebinPython.createAPIUserKey`
 
 		:returns: str -- the api_user_key
 
@@ -50,7 +48,7 @@ class PastebinPython(object):
 
 	@property
 	def api_user_paste_list(self):
-		"""This where the list of pastes of the current user is stored after calling :meth:`pastebin_python.pastebin.listUserPastes`
+		"""This where the list of pastes of the current user is stored after calling :meth:`pastebin_python.pastebin.PastebinPython.listUserPastes`
 
 		:returns: list -- current user pastes list
 
@@ -94,7 +92,7 @@ class PastebinPython(object):
 		return self.__processPost(PASTEBIN_API_POST_URL, postData)
 
 	def createPasteFromFile(self, filename, api_paste_name='', api_paste_format='', api_paste_private='', api_paste_expire_date=''):
-		"""Almost the same as :meth:`pastebin_python.pastebin.createPaste` ,the only difference is that the value of *api_paste_code* came from the file you opened 
+		"""Almost the same as :meth:`pastebin_python.pastebin.PastebinPython.createPaste` ,the only difference is that the value of *api_paste_code* came from the file you opened 
 		
 		:param filename: the full path of the file
 		:type filename: str
@@ -184,7 +182,7 @@ class PastebinPython(object):
 
 		.. note::
 
-			Need to call the :meth:`pastebin_python.pastebin.createAPIUserKey` first before calling this function
+			Need to call the :meth:`pastebin_python.pastebin.PastebinPython.createAPIUserKey` first before calling this function
 			Pastes list will be stored to the private variable *__api_user_paste_list* and can be retrieve by the property *api_user_key*
 
 		"""
@@ -220,9 +218,9 @@ class PastebinPython(object):
 		return trendsList
 
 	def __parseUser(self, xmlString):
-		"""This will parse the xml string returned by the function :func:`getUserInfos`
+		"""This will parse the xml string returned by the function :meth:`pastebin_python.pastebin.PastebinPython.getUserInfos`
 
-		:param xmlString: this is the returned xml string from :meth:`pastebin_python.pastebin.getUserInfos`
+		:param xmlString: this is the returned xml string from :meth:`pastebin_python.pastebin.PastebinPython.getUserInfos`
 		:type xmlString: str
 		:returns: list -- user info in a dictionary format
 
@@ -245,9 +243,9 @@ class PastebinPython(object):
 		return retList
 
 	def __parsePaste(self, xmlString):
-		"""This will parse the xml string returned by the the function :func:`listUserPastes` or :func:`listTrendingPastes`
+		"""This will parse the xml string returned by the the function :meth:`pastebin_python.pastebin.PastebinPython.listUserPastes` or :meth:`pastebin_python.pastebin.PastebinPython.listTrendingPastes`
 
-		:param xmlString: this is the returned xml string from :meth:`pastebin_python.pastebin.listUserPastes` or :meth:`pastebin_python.pastebin.listTrendingPastes`
+		:param xmlString: this is the returned xml string from :meth:`pastebin_python.pastebin.PastebinPython.listUserPastes` or :meth:`pastebin_python.pastebin.PastebinPython.listTrendingPastes`
 		:type xmlString: str
 		:returns: list -- pastes info in a dictionary format
 
@@ -302,13 +300,13 @@ class PastebinPython(object):
 	def deletePaste(self, api_paste_key):
 		"""This will delete pastes created by certain users
 
-		:param api_paste_key: this is the paste key that which you can get in the :meth:`pastebin_python.pastebin.listUserPastes` function
+		:param api_paste_key: this is the paste key that which you can get in the :meth:`pastebin_python.pastebin.PastebinPython.listUserPastes` function
 		:type api_paste_key: str
 		:returns: bool -- True if the deletion is successfull else False
 
 		.. note::
 
-			Before calling this function, you need to call the :meth:`pastebin_python.pastebin.createAPIUserKey` first then call the :meth:`pastebin_python.pastebin.listUserPastes`
+			Before calling this function, you need to call the :meth:`pastebin_python.pastebin.PastebinPython.createAPIUserKey` first then call the :meth:`pastebin_python.pastebin.PastebinPython.listUserPastes`
 
 		"""
 		postData = {
@@ -337,7 +335,7 @@ class PastebinPython(object):
 
 		.. note::
 
-			You need to call the :meth:`pastebin_python.pastebin.createAPIUserKey` before calling this function
+			You need to call the :meth:`pastebin_python.pastebin.PastebinPython.createAPIUserKey` before calling this function
 
 		"""
 		

@@ -1,6 +1,0 @@
-pastebin_constants.py
-=====================
-
-.. automodule:: pastebin_constants
-
-.. autodata:: pastebin_constants

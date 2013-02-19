@@ -1,6 +1,0 @@
-pastebin_formats.py
-===================
-
-.. automodule:: pastebin_formats
-	:undoc-members:
-

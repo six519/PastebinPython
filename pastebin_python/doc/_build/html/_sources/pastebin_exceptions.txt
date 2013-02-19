@@ -1,5 +1,0 @@
-pastebin_exceptions.py
-======================
-
-.. autodata:: pastebin_exceptions
-
