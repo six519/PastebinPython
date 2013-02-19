@@ -1,5 +1,5 @@
 """
-.. module:: pastebin
+.. module:: pastebin_python.pastebin
    :synopsis: This module contains the main class to be instantiated to use pastebin.com functionality
 
 .. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
@@ -23,7 +23,7 @@ class PastebinPython(object):
 		
 		:param kwargs: keyword arguments to set settings that can be use to call pastebin.com API function
 		:type kwargs: dict
-		:returns: class -- PastebinPython
+		:returns: class -- :class:`pastebin_python.pastebin.PastebinPython`
 
 		===========
 		Example:
@@ -41,7 +41,7 @@ class PastebinPython(object):
 
 	@property
 	def api_user_key(self):
-		"""This is where the api_user_key is stored after calling :func:`createAPIUserKey`
+		"""This is where the api_user_key is stored after calling :meth:`pastebin_python.pastebin.createAPIUserKey`
 
 		:returns: str -- the api_user_key
 
@@ -50,7 +50,7 @@ class PastebinPython(object):
 
 	@property
 	def api_user_paste_list(self):
-		"""This where the list of pastes of the current user is stored after calling :func:`listUserPastes`
+		"""This where the list of pastes of the current user is stored after calling :meth:`pastebin_python.pastebin.listUserPastes`
 
 		:returns: list -- current user pastes list
 
@@ -71,7 +71,7 @@ class PastebinPython(object):
 		:param api_paste_expire_date: this sets the expiration date of your paste, values to be assign can be found at :mod:`pastebin_python.pastebin_constants`
 		:type api_paste_expire_date: str
 		:returns: str -- pastebin.com paste URL
-		:raises: PastebinBadRequestException
+		:raises: :exc:`pastebin_python.pastebin_exceptions.PastebinBadRequestException`
 
 		.. note::
 
@@ -94,7 +94,7 @@ class PastebinPython(object):
 		return self.__processPost(PASTEBIN_API_POST_URL, postData)
 
 	def createPasteFromFile(self, filename, api_paste_name='', api_paste_format='', api_paste_private='', api_paste_expire_date=''):
-		"""Almost the same as :func:`createPaste` ,the only difference is that the value of *api_paste_code* came from the file you opened 
+		"""Almost the same as :meth:`pastebin_python.pastebin.createPaste` ,the only difference is that the value of *api_paste_code* came from the file you opened 
 		
 		:param filename: the full path of the file
 		:type filename: str
@@ -107,7 +107,7 @@ class PastebinPython(object):
 		:param api_paste_expire_date: this sets the expiration date of your paste, values to be assign can be found at :mod:`pastebin_python.pastebin_constants`
 		:type api_paste_expire_date: str
 		:returns: str -- pastebin.com paste URL
-		:raises: PastebinFileException
+		:raises: :exc:`pastebin_python.pastebin_exceptions.PastebinFileException`
 
 		.. note::
 
@@ -131,9 +131,9 @@ class PastebinPython(object):
 		:param url: the url of the pastebin.com **API**
 		:type url: str
 		:param data: the data to be POSTed to the pastebin.com **API**
-		:type data: dic
+		:type data: dict
 		:returns: str -- the successfull output of the pastebin.com **API** if no exception raised
-		:raises: PastebinBadRequestException, PastebinNoPastesException
+		:raises: :exc:`pastebin_python.pastebin_exceptions.PastebinBadRequestException`, :exc:`pastebin_python.pastebin_exceptions.PastebinNoPastesException`
 
 		"""
 
@@ -156,7 +156,7 @@ class PastebinPython(object):
 		:param api_user_password: this is the pastebin.com password
 		:type api_user_password: str
 		:returns: str -- unique user session key
-		:raises: PastebinBadRequestException
+		:raises: :exc:`pastebin_python.pastebin_exceptions.PastebinBadRequestException`
 
 		.. note::
 
@@ -180,11 +180,11 @@ class PastebinPython(object):
 		:param api_results_limit: this is not required but the min value should be 1 and the max value should be 1000
 		:type api_results_limit: int
 		:returns: list -- the list of of pastes in a dictionary type
-		:raises: PastebinBadRequestException, PastebinNoPastesException
+		:raises: :exc:`pastebin_python.pastebin_exceptions.PastebinBadRequestException`, :exc:`pastebin_python.pastebin_exceptions.PastebinNoPastesException`
 
 		.. note::
 
-			Need to call the :func:`createAPIUserKey` first before calling this function
+			Need to call the :meth:`pastebin_python.pastebin.createAPIUserKey` first before calling this function
 			Pastes list will be stored to the private variable *__api_user_paste_list* and can be retrieve by the property *api_user_key*
 
 		"""
@@ -205,7 +205,7 @@ class PastebinPython(object):
 		"""This will list the 18 currently trending pastes
 
 		:returns: list -- the 18 currently trending pastes in a dictionary format
-		:raises: PastebinBadRequestException
+		:raises: :exc:`pastebin_python.pastebin_exceptions.PastebinBadRequestException`
 
 		"""
 
@@ -222,7 +222,7 @@ class PastebinPython(object):
 	def __parseUser(self, xmlString):
 		"""This will parse the xml string returned by the function :func:`getUserInfos`
 
-		:param xmlString: this is the returned xml string from :func:`getUserInfos`
+		:param xmlString: this is the returned xml string from :meth:`pastebin_python.pastebin.getUserInfos`
 		:type xmlString: str
 		:returns: list -- user info in a dictionary format
 
@@ -247,7 +247,7 @@ class PastebinPython(object):
 	def __parsePaste(self, xmlString):
 		"""This will parse the xml string returned by the the function :func:`listUserPastes` or :func:`listTrendingPastes`
 
-		:param xmlString: this is the returned xml string from :func:`listUserPastes` or :func:`listTrendingPastes`
+		:param xmlString: this is the returned xml string from :meth:`pastebin_python.pastebin.listUserPastes` or :meth:`pastebin_python.pastebin.listTrendingPastes`
 		:type xmlString: str
 		:returns: list -- pastes info in a dictionary format
 
@@ -302,13 +302,13 @@ class PastebinPython(object):
 	def deletePaste(self, api_paste_key):
 		"""This will delete pastes created by certain users
 
-		:param api_paste_key: this is the paste key that which you can get in the :func:`listUserPastes` function
+		:param api_paste_key: this is the paste key that which you can get in the :meth:`pastebin_python.pastebin.listUserPastes` function
 		:type api_paste_key: str
 		:returns: bool -- True if the deletion is successfull else False
 
 		.. note::
 
-			Before calling this function, you need to call the :func:`createAPIUserKey` first then call the :func:`listUserPastes`
+			Before calling this function, you need to call the :meth:`pastebin_python.pastebin.createAPIUserKey` first then call the :meth:`pastebin_python.pastebin.listUserPastes`
 
 		"""
 		postData = {
@@ -333,11 +333,11 @@ class PastebinPython(object):
 		"""You can obtain a users personal info and certain settings by calling this function
 
 		:returns: list -- user info in a dictionary format
-		:raises: PastebinBadRequestException
+		:raises: :exc:`pastebin_python.pastebin_exceptions.PastebinBadRequestException`
 
 		.. note::
 
-			You need to call the :func:`createAPIUserKey` before calling this function
+			You need to call the :meth:`pastebin_python.pastebin.createAPIUserKey` before calling this function
 
 		"""
 		

@@ -1,6 +1,6 @@
 """
-.. module:: pastebin_formats
-	:synopsis: This module contains constants that can be used in :func:`pastebin_python.pastebin.PastebinPython.createPaste` or :func:`pastebin_python.pastebin.PastebinPython.createPasteFromFile` in *api_paste_format* parameter
+.. module:: pastebin_python.pastebin_formats
+	:synopsis: This module contains constants that can be used in :meth:`pastebin_python.pastebin.PastebinPython.createPaste` or :meth:`pastebin_python.pastebin.PastebinPython.createPasteFromFile` in *api_paste_format* parameter
 
 .. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
 

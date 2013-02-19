@@ -1,5 +1,5 @@
 """
-.. module:: pastebin_options
+.. module:: pastebin_python.pastebin_options
 	:synopsis: This module contains constants that can be used in *api_option*
 
 .. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>

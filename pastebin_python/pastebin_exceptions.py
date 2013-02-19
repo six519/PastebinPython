@@ -1,5 +1,5 @@
 """
-.. module:: pastebin_exceptions
+.. module:: pastebin_python.pastebin_exceptions
 	:synopsis: This module contains all of the exceptions
 
 .. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
