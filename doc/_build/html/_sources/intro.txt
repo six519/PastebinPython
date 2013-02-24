@@ -29,4 +29,4 @@ Steps to get PastebinPython running
 
 		>>> import pastebin_python
 		>>> pastebin_python.__version__
-		'1.1'
+		'1.2'
