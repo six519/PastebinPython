@@ -5,7 +5,9 @@
 .. moduleauthor:: Ferdinand Silva <ferdinandsilva@ferdinandsilva.com>
 
 """
-PASTEBIN_API_URL = "http://pastebin.com/api/" #: The pastebin.com API base URL
+PASTEBIN_URL = "http://pastebin.com/" #: The pastebin.com base url
+PASTEBIN_RAW_URL = "%s%s" % (PASTEBIN_URL, "raw.php?i=")
+PASTEBIN_API_URL = "%s%s" % (PASTEBIN_URL, "api/") #: The pastebin.com API base URL
 PASTEBIN_API_POST_URL = "%s%s" % (PASTEBIN_API_URL, "api_post.php") #: The pastebin.com API POST URL
 PASTEBIN_API_LOGIN_URL = "%s%s" % (PASTEBIN_API_URL, "api_login.php") #: The pastebin.com API login URL
 

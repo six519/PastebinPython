@@ -10,8 +10,8 @@ import urllib2
 import urllib
 from xml.dom.minidom import parseString
 from pastebin_options import OPTION_PASTE, OPTION_LIST, OPTION_TRENDS, OPTION_DELETE, OPTION_USER_DETAILS
-from pastebin_constants import PASTEBIN_API_POST_URL, PASTEBIN_API_LOGIN_URL
-from pastebin_exceptions import PastebinBadRequestException, PastebinNoPastesException, PastebinFileException
+from pastebin_constants import PASTEBIN_API_POST_URL, PASTEBIN_API_LOGIN_URL, PASTEBIN_RAW_URL
+from pastebin_exceptions import PastebinBadRequestException, PastebinNoPastesException, PastebinFileException, PastebinHTTPErrorException
 
 class PastebinPython(object):
 	"""This is the main class to be instantiated to use pastebin.com functionality
@@ -77,6 +77,7 @@ class PastebinPython(object):
 
 		"""
 		api_user_key = self.api_user_key if self.api_user_key else ""
+		api_paste_code = api_paste_code.encode('utf-8') if api_paste_code else ""
 
 		postData = {
 			'api_option':OPTION_PASTE,
@@ -349,3 +350,22 @@ class PastebinPython(object):
 		retData = self.__parseXML(retData, False)
 
 		return retData
+
+	def getPasteRawOutput(self, api_paste_key):
+		"""This will get the raw output of the paste
+
+		:param api_paste_key: this is the paste key that which you can get in the :meth:`pastebin_python.pastebin.PastebinPython.listUserPastes` function
+		:type api_paste_key: str
+		:returns: str -- raw output of the paste
+		:raises: :exc:`pastebin_python.pastebin_exceptions.PastebinHTTPErrorException`
+
+		"""
+
+		try:
+			request = urllib2.urlopen("%s%s" % (PASTEBIN_RAW_URL, api_paste_key))
+			response = request.read()
+			request.close()
+		except urllib2.HTTPError as e:
+			raise PastebinHTTPErrorException(str(e))
+
+		return response.decode('utf-8')

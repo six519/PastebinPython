@@ -13,3 +13,6 @@ class PastebinNoPastesException(Exception):
 
 class PastebinFileException(Exception):
 	pass
+
+class PastebinHTTPErrorException(Exception):
+	pass
