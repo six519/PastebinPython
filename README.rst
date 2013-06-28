@@ -22,9 +22,9 @@ Sample Usage
 		pbin.createAPIUserKey('<username>','<password>')
 		print pbin.createPasteFromFile('/home/six519/Downloads/email.html', 'Email format testing 2...', FORMAT_HTML, PASTE_PUBLIC, EXPIRE_10_MIN)
 	except PastebinBadRequestException as e:
-		print e
+		print e.message
 	except PastebinFileException as e:
-		print e
+		print e.message
 
 Code Documentation
 ==================
