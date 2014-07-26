@@ -227,20 +227,38 @@ class PastebinPython(object):
 
 		"""
 		retList = []
-		userElements = xmlString.getElementsByTagName('user')
-
+		userElement = xmlString.getElementsByTagName('user')[0]
+        
 		retList.append({
-			'user_name':userElements[0].getElementsByTagName('user_name')[0].childNodes[0].nodeValue,
-			'user_format_short':userElements[0].getElementsByTagName('user_format_short')[0].childNodes[0].nodeValue,
-			'user_expiration':userElements[0].getElementsByTagName('user_expiration')[0].childNodes[0].nodeValue,
-			'user_avatar_url':userElements[0].getElementsByTagName('user_avatar_url')[0].childNodes[0].nodeValue,
-			'user_private':userElements[0].getElementsByTagName('user_private')[0].childNodes[0].nodeValue,
-			'user_website':userElements[0].getElementsByTagName('user_website')[0].childNodes[0].nodeValue,
-			'user_email':userElements[0].getElementsByTagName('user_email')[0].childNodes[0].nodeValue,
-			'user_location':userElements[0].getElementsByTagName('user_location')[0].childNodes[0].nodeValue,
-			'user_account_type':userElements[0].getElementsByTagName('user_account_type')[0].childNodes[0].nodeValue
+			'user_name':userElement.getElementsByTagName('user_name')[0].childNodes[0].nodeValue,
+			'user_avatar_url':userElement.getElementsByTagName('user_avatar_url')[0].childNodes[0].nodeValue,
+			'user_account_type':userElement.getElementsByTagName('user_account_type')[0].childNodes[0].nodeValue
 		})
-
+		
+		formatElement = userElement.getElementsByTagName('user_format_short')
+		if formatElement:
+			retList[0]['user_format_short'] = formatElement[0].childNodes[0].nodeValue
+		
+		expireElement = userElement.getElementsByTagName('user_expiration')
+		if expireElement:
+			retList[0]['user_expiration'] = expireElement[0].childNodes[0].nodeValue
+		
+		privateElement = userElement.getElementsByTagName('user_private')
+		if privateElement:
+			retList[0]['user_private'] = privateElement[0].childNodes[0].nodeValue
+		
+		websiteElement = userElement.getElementsByTagName('user_website')
+		if websiteElement:
+			retList[0]['user_website'] = websiteElement[0].childNodes[0].nodeValue
+		
+		emailElement = userElement.getElementsByTagName('user_email')
+		if emailElement:
+			retList[0]['user_email'] = emailElement[0].childNodes[0].nodeValue
+		
+		locationElement = userElement.getElementsByTagName('user_location')
+		if locationElement:
+			retList[0]['user_location'] = locationElement[0].childNodes[0].nodeValue
+		
 		return retList
 
 	def __parsePaste(self, xmlString):
